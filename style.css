@@ -23,6 +23,7 @@ body{
     height: 100%;
     padding: 40px 10px 30px 10px; /* 40px(EM CIMA) , 10px (DIREITA) , 30px (EM BAIXO) , 10 (ESQUERDA) */
     border-right: 1px solid #2f3336;
+    transition: all 0.3s;
 }
 
 .sidebar-header{
@@ -31,11 +32,12 @@ body{
 }
 
 .logo-img{
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     object-fit: cover; /* Deixa a imagem certo dentro do border radions EX: a imagem fica esticada*/
     transition: transform 0.4s; /* Ele vai demorar 0.4 seg para ir para o HOVER */
+    margin-left: 10px;
 }
 
 .logo-img:hover{
@@ -66,4 +68,129 @@ body{
 
 .sidebar button:hover > span{
     background: rgb(255, 255, 255, 0.08);
+}
+
+.sidebar button i{  /* Ajustando os incons */
+    position: relative;
+    font-size: 28px;
+    transition: 0.2s;
+}
+
+.sidebar button span{ /* Ajustando o texto do lado do incons */
+    font-size: 16px;
+}
+
+.sidebar > nav{
+    flex-grow: 1; /* E o quanto vai crescer esse nosso iten */
+    flex-shrink: 1; /* Quanto ele vai diminuir , define o fator de redução */
+    flex-basis: auto; /* E o tamanho base de cada iten */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+/* SEPARANDO O SIDEBAR DO  */
+
+.main{
+    margin-left: 250px; /* Porque 250 ?  porque o sidebar e um width: 240px; você da 10px de descanço na linha 22 */
+    margin-right: 6px;
+    overflow: hidden;
+}
+
+/* Ajustando o sidebar na tela com apenas os icones quando chegar a um determinado tamanho */
+@media (width < 920px){ /* Quando o tamanho da tela for menor que 920 */
+    .sidebar{
+        width: 72px;
+    }
+
+    .sidebar button > span{
+        width: 50px;
+    }
+
+    .sidebar button > span > span{
+        opacity: 0; /* Tirando o texto da tela */
+        visibility: hidden; /* Esconder ele da tela */
+    }
+
+    .main{
+        margin-left: 80px; /* Porque 250 ?  porque o sidebar e um width: 240px; na linha 104 */
+        transition: margin 0.4s;
+    }
+}
+
+/* ESCONDENDO A VERSION MOBILE */
+.button-mobile{
+    display: none;
+    align-self: flex-start;
+    align-items: center;
+    margin: 16px;
+    background: transparent;
+    color: aliceblue;
+    border: 0;
+}
+
+.button-mobile{
+    font-size: 24px;
+    margin-left: 8px;
+}
+
+.button-mobile span{
+    margin-left: 15px;
+}
+
+.button-close span i{
+    font-size: 42px;
+}
+
+.menu-mobile-active{
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 99; /* Ele vai ficar sobre qualquer coisa da tela */
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.menu-mobile-active button{
+    background: transparent;
+    border: 0;
+    color: inherit;
+    margin-bottom: 16px;
+}
+
+.menu-mobile-active button > span{
+    display: inline-flex;
+    align-items: center;
+}
+
+.mobile-text{
+    font-size: 22px;
+    margin-left: 8px;
+}
+
+.menu-mobile{
+    display: none;
+}
+
+@media (max-width: 480px){
+    .sidebar{
+        display: none; /* escondendo a versão pc */
+    }
+
+    /* Colocando a version mobile */
+    .button-mobile{
+        display: flex;
+    }
+
+    .main{
+        margin-left: 6px;
+    }
+
 }

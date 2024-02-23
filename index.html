@@ -12,20 +12,86 @@
         <header class="sidebar-header">
             <img class="logo-img" src="https://files.sunoresearch.com.br/p/uploads/2021/12/Steve_Jobs.jpg" alt="Foto do usuario">
         </header>
-        <nav class="border">
+        <nav>
             <button>
                 <span>
                     <i class="material-symbols-outlined">home</i>
                     <span>Home</span>
                 </span>
             </button>
+
             <button>
                 <span>
                     <i class="material-symbols-outlined">tag</i>
                     <span>Explorar</span>
                 </span>
             </button>
+
+            <button>
+                <span>
+                    <i class="material-symbols-outlined">email</i>
+                    <span>Mensagens</span>
+                </span>
+            </button>
+
+            <button>
+                <span>
+                    <i class="material-symbols-outlined">person</i>
+                    <span>Profile</span>
+                </span>
+            </button>
+
         </nav>
     </aside>
+
+
+    <!-- CRIANDO O MENU MOBILE -->
+    <button class="button-mobile" onclick="taggleMenu()">
+        <i class="material-symbols-outlined">menu</i>
+        <span>Menu</span>
+    </button>
+
+    <nav class="menu-mobile" id="menu-mobile">
+        <button class="button-close" onclick="taggleMenu()">
+            <span>
+                <i class="material-symbols-outlined">close</i>
+            </span> 
+        </button>
+
+        <button>
+            <span>
+                <i class="material-symbols-outlined">home</i>
+                <span class="mobile-text">Home</span>
+            </span>
+        </button>
+
+        <button>
+            <span>
+                <i class="material-symbols-outlined">tag</i>
+                <span class="mobile-text">Explorar</span>
+            </span>
+        </button>
+
+        <button>
+            <span>
+                <i class="material-symbols-outlined">email</i>
+                <span class="mobile-text">Mensagens</span>
+            </span>
+        </button>
+
+        <button>
+            <span>
+                <i class="material-symbols-outlined">person</i>
+                <span class="mobile-text">Profile</span>
+            </span>
+        </button>
+    </nav>
+
+    <main class="main">
+        <h1>Bem vindos ao site</h1>
+        <span>Teste Leonardo Cortarelli</span>
+    </main>
+
+    <script src="index.js"></script>
 </body>
 </html>
