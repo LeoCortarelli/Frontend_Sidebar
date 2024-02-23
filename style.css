@@ -1,0 +1,69 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #121212;
+    color: aliceblue;
+}
+
+.border{
+    border: 1px solid red;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Sempre colado no começo */
+    width: 240px;
+    height: 100%;
+    padding: 40px 10px 30px 10px; /* 40px(EM CIMA) , 10px (DIREITA) , 30px (EM BAIXO) , 10 (ESQUERDA) */
+    border-right: 1px solid #2f3336;
+}
+
+.sidebar-header{
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.logo-img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover; /* Deixa a imagem certo dentro do border radions EX: a imagem fica esticada*/
+    transition: transform 0.4s; /* Ele vai demorar 0.4 seg para ir para o HOVER */
+}
+
+.logo-img:hover{
+    transform: scale(1.5);
+}
+
+.sidebar button{ /* Cada button que está dentro da class sidebar era sofrer essa istilização */
+    height: 60px;
+    background: transparent; /* Deixando transparente */
+    border: 0; /* Tirando a borda */
+    font-family: inherit; /* Usar a mesma font do body */
+    color: inherit; /* Usar a mesma cor do body */
+    cursor: pointer;
+    text-align: left; /* O texto tem que estar grudado sempre na esquerda */
+    padding: 0;
+}
+
+.sidebar button > span { /* Alinhando o span dentro do button */
+    display: inline-flex;
+    align-items: center;
+    gap: 12px; /* Dar um espaçamento entre o icons e o texto */
+    height: 48px;
+    padding: 0 16px 0 12px; /* Alinhando um em baixo do outro */
+    border-radius: 24px;
+    line-height: 1;
+    transition: all 0.3s;
+}
+
+.sidebar button:hover > span{
+    background: rgb(255, 255, 255, 0.08);
+}
